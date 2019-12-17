@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './YellowButton.css'
+import './ColorButton.css'
 
 class Style {
     width: string;
