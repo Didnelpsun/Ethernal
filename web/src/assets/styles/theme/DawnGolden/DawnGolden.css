@@ -1,23 +1,39 @@
-.Main{
-    background-color: #f8ae01;
-    color:black;
-    margin:0px;
-    border:0px;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.Main {
+  background-color: #fdc644;
+  color: white;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.canvas {
+  background-color: #fae379;
+}
+
+.title{
+  color:white;
 }
 
 ::selection {
-    background:#fae379;
-    color: #ffffff;
-  }
-  ::-moz-selection {
-    background: #fae379;
-    color: #ffffff;
-  }
+  background: #fae379;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #fae379;
+  color: #ffffff;
+}
 
-.MainMessage{
-    color: wheat;
+.MainMessage {
+  color: wheat;
+}
+
+.signupboard{
+  background-color: #fae379;
+}
+
+.footer{
+  background-color: black;
 }

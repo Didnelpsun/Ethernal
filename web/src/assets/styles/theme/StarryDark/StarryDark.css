@@ -5,8 +5,16 @@
   border: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+}
+
+.canvas {
+  background-color: #222;
+}
+
+.title{
+  color:#7a17cd;
 }
 
 ::selection {
@@ -20,4 +28,12 @@
 
 .MainMessage {
   color: #d4a7fa;
+}
+
+.signupboard{
+  background-color: #7a17cd;
+}
+
+.footer{
+  background-color: #3b0349;
 }
