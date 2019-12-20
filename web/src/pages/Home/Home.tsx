@@ -3,7 +3,7 @@ import './Home.css'
 // import '../../assets/styles/theme/StarryDark/StarryDark.css'
 import '../../assets/styles/theme/DawnGolden/DawnGolden.css'
 import YellowButton from '../../components/ColorButton/ColorButton'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { Icon } from 'antd'
 
 const style1 = {
@@ -27,12 +27,12 @@ let stylenone = { display: 'none' };
 
 function changeColor(props: string) {
   const div: HTMLDivElement = document.getElementById(props) as HTMLDivElement;
-  div.style.color = div.style.color == '' ? 'white' : '';
+  div.style.color = div.style.color === '' ? 'white' : '';
 }
 
 function changeButton(name: string, color: string) {
   const button: HTMLButtonElement = document.getElementById(name) as HTMLButtonElement;
-  button.style.backgroundColor = button.style.backgroundColor == '' ? color : '';
+  button.style.backgroundColor = button.style.backgroundColor === '' ? color : '';
 }
 interface InState {
   styleuser: object;
@@ -48,7 +48,7 @@ class Home extends React.Component<{}, InState> {
   }
 
   signinButton() {
-    if (this.state.styleuser == styleshow) {
+    if (this.state.styleuser === styleshow) {
       this.setState({
         styleuser: stylenone,
         stylesignin: styleshow
@@ -88,16 +88,21 @@ class Home extends React.Component<{}, InState> {
             <div className='signupboard' style={this.state.stylesignin}>
               <form className='content'>
                 <span>Username</span>
-                <div style={{ flexDirection: 'row' }}>
+                <div style={{ flexDirection: 'row',position:'relative' }}>
+                <Icon type="fire" style={{color:'#fae379',left:'0.5vw', top:'3vh',position:'absolute'}}/>
                   <input></input>
                 </div>
                 <span>Password</span>
-                <div style={{ flexDirection: 'row' }}>
+                <div style={{ flexDirection: 'row',position:'relative' }}>
+                <Icon type="lock" style={{color:'#fae379',left:'0.5vw', top:'3vh',position:'absolute'}}/>
                   <input type='password'></input>
                 </div>
-                <button className='submit' id='submit' type='submit' onMouseEnter={changeButton.bind(this,'submit','#01c501')} onMouseOut={changeButton.bind(this,'submit','#01c501')}>Submit And Sign Up</button>
-                <button className='reset' id='reset' type='reset' onClick={this.signinButton.bind(this)} onMouseEnter={changeButton.bind(this,'reset','red')} onMouseOut={changeButton.bind(this,'reset','red')}>Reset And Turn Back</button>
+                <button className='submit' id='submit' type='submit' onMouseEnter={changeButton.bind(this, 'submit', '#01c501')} onMouseOut={changeButton.bind(this, 'submit', '#01c501')}>Submit And Sign Up</button>
+                <button className='reset' id='reset' type='reset' onClick={this.signinButton.bind(this)} onMouseEnter={changeButton.bind(this, 'reset', 'red')} onMouseOut={changeButton.bind(this, 'reset', 'red')}>Reset And Turn Back</button>
               </form>
+              <div className='illustration' style={{display:'none'}}>
+                <div className='forget'>If you forget your password, please click here</div>
+              </div>
             </div>
           </div>
         </div>
